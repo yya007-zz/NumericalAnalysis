@@ -45,29 +45,29 @@ def Romberg(func,a,b,n):
 			R[1,j]=R[2,j]
 	return R[2,1:]
 
-def Euler(func,a,b,n,alpha,realfunc=None):
-	h=(b-a)/n
-	t=a
-	w=alpha
-	if realfunc is not None:
-		print ("t0: %f, w0: %f, y0: %f, |y0-w0|: %f"%(t,w,realfunc(t),abs(realfunc(t)-w)))
-	else:
-		print ("t0: %f, w0: %f"%(t,w))
+# def Euler(func,a,b,n,alpha,realfunc=None):
+# 	h=(b-a)/n
+# 	t=a
+# 	w=alpha
+# 	if realfunc is not None:
+# 		print ("t0: %f, w0: %f, y0: %f, |y0-w0|: %f"%(t,w,realfunc(t),abs(realfunc(t)-w)))
+# 	else:
+# 		print ("t0: %f, w0: %f"%(t,w))
 
-	value=[]
-	res=[]
-	value.append(t)
-	res.append(w)
-	for i in range(1,n+1):
-		w+=h*func(w,t)
-		t=a+i*h
-		if realfunc is not None:
-			print ("t%d: %f, w%d: %f, y%d: %f, |y%d-w%d|: %f"%(i,t,i,w,i,realfunc(t),i,i,abs(realfunc(t)-w)))
-		else:
-			print ("t%d: %f, w%d: %f "%(i,t,i,w))
-		value.append(t)
-		res.append(w)
-	return value,res
+# 	value=[]
+# 	res=[]
+# 	value.append(t)
+# 	res.append(w)
+# 	for i in range(1,n+1):
+# 		w+=h*func(w,t)
+# 		t=a+i*h
+# 		if realfunc is not None:
+# 			print ("t%d: %f, w%d: %f, y%d: %f, |y%d-w%d|: %f"%(i,t,i,w,i,realfunc(t),i,i,abs(realfunc(t)-w)))
+# 		else:
+# 			print ("t%d: %f, w%d: %f "%(i,t,i,w))
+# 		value.append(t)
+# 		res.append(w)
+# 	return value,res
 
 if __name__== "__main__":
 	def func1(x):
